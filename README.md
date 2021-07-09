@@ -14,8 +14,8 @@
 * /hat, /glasses, /mask (See the commands section below.)
 # Commands
 * /hat - Toggles the hat On/Off.
-* /mask - Toggles the hmaskat On/Off.
-* /glasses - Toggles the glasses On/Fff
+* /mask - Toggles the mask On/Off.
+* /glasses - Toggles the glasses On/Off
 # Screenshots
 ![image](https://user-images.githubusercontent.com/79502719/124834635-17857f00-df4e-11eb-8af1-68246b327d41.png)
 ![image](https://user-images.githubusercontent.com/79502719/124834883-7519cb80-df4e-11eb-9bf7-7449a5ad6e37.png)
