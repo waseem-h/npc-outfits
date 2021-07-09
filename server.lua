@@ -331,7 +331,7 @@ AddEventHandler("clothing:checkMoney", function(askingPrice)
     local target = exports["npc-core"]:getModule("Player"):GetUser(src)
 
     if not askingPrice then
-        askingPrice = 0
+        askingPrice = 150
     end
 
     if (tonumber(target:getCash()) >= askingPrice) then
