@@ -131,12 +131,12 @@ AddEventHandler("npc-outfits:retrieve_tats", function(pSrc)
     local src = (not pSrc and source or pSrc)
 	local user = exports["npc-core"]:getModule("Player"):GetUser(src)
     local char = user:getCurrentCharacter()
-	exports.ghmattimysql:execute("SELECT * FROM playersTattoos WHERE identifier = @identifier", {['identifier'] = char.id}, function(result)
+	exports.ghmattimysql:execute("SELECT * FROM playerstattoos WHERE identifier = @identifier", {['identifier'] = char.id}, function(result)
         if(#result == 1) then
 			TriggerClientEvent("npc-outfits:settattoos", src, json.decode(result[1].tattoos))
 		else
 			local tattooValue = "{}"
-			exports.ghmattimysql:execute("INSERT INTO playersTattoos (identifier, tattoos) VALUES (@identifier, @tattoo)", {['identifier'] = char.id, ['tattoo'] = tattooValue})
+			exports.ghmattimysql:execute("INSERT INTO playerstattoos (identifier, tattoos) VALUES (@identifier, @tattoo)", {['identifier'] = char.id, ['tattoo'] = tattooValue})
 			TriggerClientEvent("npc-outfits:settattoos", src, {})
 		end
 	end)
@@ -147,7 +147,7 @@ AddEventHandler("npc-outfits:set_tats", function(tattoosList)
 	local src = source
 	local user = exports["npc-core"]:getModule("Player"):GetUser(src)
     local char = user:getCurrentCharacter()
-	exports.ghmattimysql:execute("UPDATE playersTattoos SET tattoos = @tattoos WHERE identifier = @identifier", {['tattoos'] = json.encode(tattoosList), ['identifier'] = char.id})
+	exports.ghmattimysql:execute("UPDATE playerstattoos SET tattoos = @tattoos WHERE identifier = @identifier", {['tattoos'] = json.encode(tattoosList), ['identifier'] = char.id})
 end)
 
 
